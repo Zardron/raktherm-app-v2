@@ -15,17 +15,12 @@ const navOptionHandler = () => ({
   headerShown: false,
 });
 
-export const HomeStack = () => {
+export const HomeStack = (data) => {
   return (
     <Stack.Navigator initialRouteName="HomeScreen">
       <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}
-        options={navOptionHandler}
-      />
-      <Stack.Screen
-        name="MegaProjects"
-        component={MegaProjects}
         options={navOptionHandler}
       />
       <Stack.Screen

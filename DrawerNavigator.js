@@ -7,7 +7,6 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import Header from "./components/Header";
 import SubMenuHeader from "./components/SubMenuHeader";
 
 const DrawerNavigator = () => {
@@ -19,7 +18,7 @@ const DrawerNavigator = () => {
       <View
         style={{
           flex: 1,
-          backgroundColor: "#e5e7ebd1",
+          backgroundColor: "white",
           borderBottomWidth: 50,
           borderColor: "#0e9648",
         }}
@@ -39,7 +38,7 @@ const DrawerNavigator = () => {
               borderWidth: 0,
             }}
             _light={{
-              backgroundColor: "e5e7ebd1",
+              backgroundColor: "#e5e7ebd1",
             }}
           >
             <Box>

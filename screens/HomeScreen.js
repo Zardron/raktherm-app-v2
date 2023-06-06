@@ -1,26 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import {
-  Image,
-  View,
-  Text,
-  Box,
-  HStack,
-  Center,
-  Stack,
-  Progress,
-} from "native-base";
+import React from "react";
+import { Image, View } from "native-base";
 import Header from "../components/Header";
-import { useNavigation } from "@react-navigation/native";
-import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
-import { SimpleLineIcons } from "@expo/vector-icons";
-import { NewsfeedData } from "../assets/data/Newsfeed";
-import { Dimensions, useWindowDimensions } from "react-native";
-import AutoHeightImage from "react-native-auto-height-image";
 import { TabView, SceneMap, TabBar } from "react-native-tab-view";
 import { LogBox } from "react-native";
 import Newsfeed from "../components/Newsfeed";
-import { StyleSheet } from "react-native";
-import Animated from "react-native-reanimated";
+import MegaProjects from "../components/MegaProjects";
+import { useWindowDimensions } from "react-native";
+import Certification from "../components/Certification";
 
 LogBox.ignoreLogs([
   "Sending `onAnimatedValueUpdate` with no listeners registered.",
@@ -30,20 +16,16 @@ LogBox.ignoreLogs([
   "Found screens with the same name nested inside one another.",
 ]);
 
-const FirstRoute = () => (
-  <View style={{ flex: 1, backgroundColor: "#ff4081" }} />
-);
+const MegaProjectRoute = () => <MegaProjects />;
 
 const NewsfeedRoute = () => <Newsfeed />;
 
-const ThirdRoute = () => (
-  <View style={{ flex: 1, backgroundColor: "#673ab7" }} />
-);
+const CertificationRoute = () => <Certification />;
 
 const renderScene = SceneMap({
-  first: FirstRoute,
+  first: MegaProjectRoute,
   second: NewsfeedRoute,
-  third: ThirdRoute,
+  third: CertificationRoute,
 });
 
 const HomeScreen = () => {
@@ -101,7 +83,7 @@ const HomeScreen = () => {
               inactiveColor="#414142"
               labelStyle={{
                 fontSize: 12,
-                fontWeight: 500,
+                fontWeight: "bold",
               }}
             />
           )}

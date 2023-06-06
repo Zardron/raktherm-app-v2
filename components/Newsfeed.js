@@ -1,14 +1,14 @@
 import React from "react";
 import { View, Text, Box, HStack, Center, Stack } from "native-base";
 import { useNavigation } from "@react-navigation/native";
-import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
+import { ScrollView } from "react-native-gesture-handler";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import { NewsfeedData } from "../assets/data/Newsfeed";
 import AutoHeightImage from "react-native-auto-height-image";
 import { Dimensions } from "react-native";
 
 const Newsfeed = () => {
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
   const deviceWidth = Dimensions.get("window").width;
   const lastPost = NewsfeedData[NewsfeedData.length - 1].id;
 
@@ -20,6 +20,7 @@ const Newsfeed = () => {
           alignItems: "center",
           justifyContent: "center",
           marginBottom: 30,
+          backgroundColor: "#f0f2f5",
         }}
       >
         {/* POST */}
@@ -32,42 +33,31 @@ const Newsfeed = () => {
             }}
             key={key}
           >
-            <Box alignItems="center" shadow={3}>
+            <Box alignItems="center" backgroundColor={"red"}>
               <Box
                 rounded="lg"
                 overflow="hidden"
                 borderColor="coolGray.200"
                 borderWidth="1"
-                _dark={{
-                  borderColor: "coolGray.600",
-                  backgroundColor: "gray.700",
-                }}
-                _web={{
-                  shadow: 2,
-                  borderWidth: 0,
-                }}
-                _light={{
-                  backgroundColor: "gray.50",
-                }}
               >
                 <Box>
-                  <TouchableOpacity
+                  {/* <Pressable
                     onPress={() =>
                       navigation.navigate({
                         name: "FeedDetails",
                         params: { _id: data.id },
                       })
                     }
-                  >
-                    <AutoHeightImage
-                      key={key}
-                      source={data.imgSrc}
-                      alt="img"
-                      width={deviceWidth - 28}
-                    />
-                  </TouchableOpacity>
+                  > */}
+                  <AutoHeightImage
+                    key={key}
+                    source={data.imgSrc}
+                    alt="img"
+                    width={deviceWidth - 28}
+                  />
+                  {/* </Pressable> */}
                 </Box>
-                <Stack p="4" space={3}>
+                <Stack p="4" space={3} backgroundColor={"white"}>
                   <HStack
                     alignItems="center"
                     space={4}
@@ -86,7 +76,7 @@ const Newsfeed = () => {
                     </HStack>
                   </HStack>
                   <Center
-                    bg="#0e9648"
+                    bg="#008053"
                     _dark={{
                       bg: "violet.400",
                     }}
@@ -101,16 +91,16 @@ const Newsfeed = () => {
                     px="3"
                     py="1.5"
                   >
-                    <TouchableOpacity
+                    {/* <Pressable
                       onPress={() =>
                         navigation.navigate({
                           name: "FeedDetails",
                           params: { _id: data.id },
                         })
                       }
-                    >
-                      <SimpleLineIcons name="options" size={24} color="white" />
-                    </TouchableOpacity>
+                    > */}
+                    <SimpleLineIcons name="options" size={24} color="white" />
+                    {/* </Pressable> */}
                   </Center>
 
                   <Stack space={2}>{data.details}</Stack>

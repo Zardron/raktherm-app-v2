@@ -34,7 +34,7 @@ const Header = ({ headerTitle, mainScreen }) => {
             }}
           >
             <TouchableOpacity onPress={() => navigation.openDrawer()}>
-              <Feather name="menu" size={28} color="white" />
+              <Feather name="menu" size={28} color="#f9fafb" />
             </TouchableOpacity>
           </View>
         ) : (
@@ -58,9 +58,9 @@ const Header = ({ headerTitle, mainScreen }) => {
               }}
               onPress={() => navigation.goBack()}
             >
-              <Ionicons name="chevron-back" size={28} color="white" />
+              <Ionicons name="chevron-back" size={28} color="#f9fafb" />
               <Text
-                style={{ fontSize: 18, fontWeight: "bold", color: "white" }}
+                style={{ fontSize: 18, fontWeight: "bold", color: "#f9fafb" }}
               >
                 Back
               </Text>
@@ -76,7 +76,7 @@ const Header = ({ headerTitle, mainScreen }) => {
             justifyContent: "center",
           }}
         >
-          <Text style={{ fontSize: 21, fontWeight: "bold", color: "white" }}>
+          <Text style={{ fontSize: 21, fontWeight: "bold", color: "#f9fafb" }}>
             {headerTitle}
           </Text>
         </View>
@@ -90,7 +90,7 @@ const Header = ({ headerTitle, mainScreen }) => {
             paddingRight: 10,
           }}
         >
-          <Feather name="bell" size={24} color="white" />
+          <Feather name="bell" size={24} color="#f9fafb" />
         </View>
       </View>
     </>

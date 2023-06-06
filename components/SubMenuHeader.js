@@ -31,7 +31,7 @@ const SubMenuHeader = ({ headerTitle }) => {
             justifyContent: "center",
           }}
         >
-          <Text style={{ fontSize: 21, fontWeight: "bold", color: "white" }}>
+          <Text style={{ fontSize: 21, fontWeight: "bold", color: "#f9fafb" }}>
             {headerTitle}
           </Text>
         </View>
