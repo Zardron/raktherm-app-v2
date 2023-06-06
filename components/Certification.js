@@ -10,13 +10,15 @@ const Certification = () => {
   return (
     <>
       <View
-        backgroundColor={"white"}
         style={{
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           paddingTop: 10,
           paddingHorizontal: 20,
+          backgroundColor: "white",
+          borderBottomWidth: 0.2,
+          borderBottomColor: "gray",
         }}
       >
         <View

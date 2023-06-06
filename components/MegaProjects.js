@@ -49,6 +49,8 @@ const MegaProjects = () => {
           justifyContent: "center",
           paddingTop: 10,
           paddingHorizontal: 20,
+          borderBottomWidth: 0.2,
+          borderBottomColor: "gray",
         }}
       >
         <View
@@ -87,7 +89,6 @@ const MegaProjects = () => {
                 marginBottom: data.id === lastPost ? 20 : 0,
                 paddingHorizontal: 20,
               }}
-              key={key}
             >
               <Box alignItems="center" style={{ width: deviceWidth - 30 }}>
                 <Box
