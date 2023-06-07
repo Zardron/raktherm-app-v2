@@ -1,4 +1,4 @@
-import { Box, Text } from "native-base";
+import { Badge, Box, Button, Text, VStack } from "native-base";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { View } from "react-native";
@@ -90,7 +90,25 @@ const Header = ({ headerTitle, mainScreen }) => {
             paddingRight: 10,
           }}
         >
-          <Feather name="bell" size={24} color="#f9fafb" />
+          <Box alignItems="center">
+            <VStack mb={2}>
+              <Badge // bg="red.400"
+                colorScheme="danger"
+                rounded="full"
+                mb={-2}
+                mr={-2}
+                zIndex={1}
+                variant="solid"
+                alignSelf="flex-end"
+                _text={{
+                  fontSize: 12,
+                }}
+              >
+                2
+              </Badge>
+              <Feather name="bell" size={24} color="#f9fafb" />
+            </VStack>
+          </Box>
         </View>
       </View>
     </>

@@ -50,7 +50,6 @@ const Newsfeed = () => {
                     }
                   > */}
                   <AutoHeightImage
-                    key={key}
                     source={data.imgSrc}
                     alt="img"
                     width={deviceWidth - 28}

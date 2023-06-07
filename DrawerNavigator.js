@@ -1,16 +1,28 @@
-import { View, Text, SafeAreaView, TouchableOpacity } from "react-native";
-import React from "react";
+import { View, Text } from "react-native";
+import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { Image, Box, AspectRatio, Center, ScrollView } from "native-base";
-import { StatusBar } from "expo-status-bar";
+import {
+  Image,
+  Box,
+  AspectRatio,
+  Center,
+  ScrollView,
+  Pressable,
+} from "native-base";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import SubMenuHeader from "./components/SubMenuHeader";
+import HomeScreen from "./screens/HomeScreen";
 
-const DrawerNavigator = () => {
+const DrawerNavigator = ({ isLoggedIn, isGuestLogin, handleLogout }) => {
   const navigation = useNavigation();
+
+  const handleNavigate = (route) => {
+    let routeName = route;
+    navigation.navigate(routeName);
+  };
 
   return (
     <>
@@ -45,7 +57,9 @@ const DrawerNavigator = () => {
               <AspectRatio w="100%" ratio={1}>
                 <Image
                   source={{
-                    uri: "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg",
+                    uri: isGuestLogin
+                      ? "https://d11a6trkgmumsb.cloudfront.net/original/3X/d/8/d8b5d0a738295345ebd8934b859fa1fca1c8c6ad.jpeg"
+                      : "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg",
                   }}
                   alt="image"
                 />
@@ -65,7 +79,9 @@ const DrawerNavigator = () => {
                 px="3"
                 py="1.5"
               >
-                Zardron Angelo Pesquera
+                {isGuestLogin
+                  ? "Signed In as Guest"
+                  : "Zardron Angelo Pesquera"}
               </Center>
             </Box>
           </Box>
@@ -81,13 +97,12 @@ const DrawerNavigator = () => {
                 marginTop: 5,
               }}
             >
-              <TouchableOpacity>
+              <Pressable>
                 <View
                   style={{
                     flexDirection: "row",
                     alignItems: "center",
                     padding: 15,
-                    backgroundColor: "#e2e8f0",
                     borderRadius: 10,
                     justifyContent: "space-between",
                   }}
@@ -100,23 +115,58 @@ const DrawerNavigator = () => {
                       justifyContent: "flex-start",
                     }}
                   >
-                    <FontAwesome5 name="home" size={24} color="#0e9648" />
+                    <FontAwesome5 name="home" size={24} color="#414142" />
                   </View>
                   <View style={{ flex: 0.8 }}>
                     <Text
                       style={{
-                        color: "#0e9648",
+                        color: "#414142",
                         fontSize: 18,
                         fontWeight: "700",
                       }}
-                      onPress={() => navigation.navigate("Home")}
+                      onPress={() => handleNavigate("Home")}
                     >
                       Home
                     </Text>
                   </View>
                 </View>
-              </TouchableOpacity>
-              <TouchableOpacity>
+              </Pressable>
+
+              <Pressable>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    padding: 15,
+                    borderRadius: 10,
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <View
+                    style={{
+                      flex: 0.2,
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "flex-start",
+                    }}
+                  >
+                    <FontAwesome5 name="blogger-b" size={24} color="#404041" />
+                  </View>
+                  <View style={{ flex: 0.8 }}>
+                    <Text
+                      style={{
+                        color: "#404041",
+                        fontSize: 18,
+                        fontWeight: "700",
+                      }}
+                      onPress={() => handleNavigate("Blogs")}
+                    >
+                      Blogs
+                    </Text>
+                  </View>
+                </View>
+              </Pressable>
+              <Pressable>
                 <View
                   style={{
                     flexDirection: "row",
@@ -147,14 +197,14 @@ const DrawerNavigator = () => {
                         fontSize: 18,
                         fontWeight: "700",
                       }}
-                      onPress={() => navigation.navigate("VideoGallery")}
+                      onPress={() => handleNavigate("VideoGallery")}
                     >
                       Video Gallery
                     </Text>
                   </View>
                 </View>
-              </TouchableOpacity>
-              <TouchableOpacity>
+              </Pressable>
+              <Pressable>
                 <View
                   style={{
                     flexDirection: "row",
@@ -185,14 +235,14 @@ const DrawerNavigator = () => {
                         fontSize: 18,
                         fontWeight: "700",
                       }}
-                      onPress={() => navigation.navigate("ProductRanges")}
+                      onPress={() => handleNavigate("ProductRanges")}
                     >
                       Product Ranges
                     </Text>
                   </View>
                 </View>
-              </TouchableOpacity>
-              <TouchableOpacity>
+              </Pressable>
+              <Pressable>
                 <View
                   style={{
                     flexDirection: "row",
@@ -223,85 +273,55 @@ const DrawerNavigator = () => {
                         fontSize: 18,
                         fontWeight: "700",
                       }}
-                      onPress={() => navigation.navigate("ServicesAndSupport")}
+                      onPress={() => handleNavigate("ServicesAndSupport")}
                     >
                       Services & Support
                     </Text>
                   </View>
                 </View>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    padding: 15,
-                    borderRadius: 10,
-                    justifyContent: "space-between",
-                  }}
-                >
+              </Pressable>
+              {isGuestLogin ? (
+                ""
+              ) : (
+                <Pressable>
                   <View
                     style={{
-                      flex: 0.2,
                       flexDirection: "row",
                       alignItems: "center",
-                      justifyContent: "flex-start",
+                      padding: 15,
+                      borderRadius: 10,
+                      justifyContent: "space-between",
                     }}
                   >
-                    <MaterialCommunityIcons
-                      name="file-certificate"
-                      size={24}
-                      color="#404041"
-                    />
-                  </View>
-                  <View style={{ flex: 0.8 }}>
-                    <Text
+                    <View
                       style={{
-                        color: "#404041",
-                        fontSize: 18,
-                        fontWeight: "700",
+                        flex: 0.2,
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "flex-start",
                       }}
-                      onPress={() => navigation.navigate("Certifications")}
                     >
-                      Certifications
-                    </Text>
+                      <MaterialIcons
+                        name="menu-book"
+                        size={24}
+                        color="#404041"
+                      />
+                    </View>
+                    <View style={{ flex: 0.8 }}>
+                      <Text
+                        style={{
+                          color: "#404041",
+                          fontSize: 18,
+                          fontWeight: "700",
+                        }}
+                        onPress={() => handleNavigate("Catalogues")}
+                      >
+                        Catalogues
+                      </Text>
+                    </View>
                   </View>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    padding: 15,
-                    borderRadius: 10,
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <View
-                    style={{
-                      flex: 0.2,
-                      flexDirection: "row",
-                      alignItems: "center",
-                      justifyContent: "flex-start",
-                    }}
-                  >
-                    <MaterialIcons name="menu-book" size={24} color="#404041" />
-                  </View>
-                  <View style={{ flex: 0.8 }}>
-                    <Text
-                      style={{
-                        color: "#404041",
-                        fontSize: 18,
-                        fontWeight: "700",
-                      }}
-                      onPress={() => navigation.navigate("Catalogues")}
-                    >
-                      Catalogues
-                    </Text>
-                  </View>
-                </View>
-              </TouchableOpacity>
+                </Pressable>
+              )}
             </View>
             {/* END */}
             {/* BOTTOM MENU */}
@@ -314,7 +334,7 @@ const DrawerNavigator = () => {
                 borderTopColor: "#41404040",
               }}
             >
-              <TouchableOpacity>
+              <Pressable>
                 <View
                   style={{
                     flexDirection: "row",
@@ -341,14 +361,14 @@ const DrawerNavigator = () => {
                         fontSize: 18,
                         fontWeight: "700",
                       }}
-                      onPress={() => navigation.navigate("Notification")}
+                      onPress={() => handleNavigate("Notification")}
                     >
                       My Profile
                     </Text>
                   </View>
                 </View>
-              </TouchableOpacity>
-              <TouchableOpacity>
+              </Pressable>
+              <Pressable>
                 <View
                   style={{
                     flexDirection: "row",
@@ -379,49 +399,89 @@ const DrawerNavigator = () => {
                         fontSize: 18,
                         fontWeight: "700",
                       }}
-                      onPress={() => navigation.navigate("Notification")}
+                      onPress={() => handleNavigate("Settings")}
                     >
                       Settings
                     </Text>
                   </View>
                 </View>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    padding: 15,
-                    borderRadius: 10,
-                    justifyContent: "space-between",
-                  }}
-                >
+              </Pressable>
+              {isGuestLogin ? (
+                <Pressable onPress={handleLogout}>
                   <View
                     style={{
-                      flex: 0.2,
                       flexDirection: "row",
                       alignItems: "center",
-                      justifyContent: "flex-start",
+                      padding: 15,
+                      borderRadius: 10,
+                      justifyContent: "space-between",
                     }}
                   >
-                    <MaterialIcons name="logout" size={24} color="red" />
-                  </View>
-                  <View style={{ flex: 0.8 }}>
-                    <Text
+                    <View
                       style={{
-                        color: "red",
-                        fontSize: 18,
-                        fontWeight: "700",
+                        flex: 0.2,
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "flex-start",
                       }}
                     >
-                      Logout
-                    </Text>
+                      <MaterialIcons name="logout" size={24} color="blue" />
+                    </View>
+                    <View style={{ flex: 0.8 }}>
+                      <Text
+                        style={{
+                          color: "blue",
+                          fontSize: 18,
+                          fontWeight: "700",
+                        }}
+                      >
+                        Back to Sign In
+                      </Text>
+                    </View>
                   </View>
-                </View>
-              </TouchableOpacity>
+                </Pressable>
+              ) : (
+                <Pressable onPress={handleLogout}>
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      alignItems: "center",
+                      padding: 15,
+                      borderRadius: 10,
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <View
+                      style={{
+                        flex: 0.2,
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "flex-start",
+                      }}
+                    >
+                      <MaterialIcons name="logout" size={24} color="red" />
+                    </View>
+                    <View style={{ flex: 0.8 }}>
+                      <Text
+                        style={{
+                          color: "red",
+                          fontSize: 18,
+                          fontWeight: "700",
+                        }}
+                      >
+                        Logout
+                      </Text>
+                    </View>
+                  </View>
+                </Pressable>
+              )}
             </View>
           </View>
         </ScrollView>
+      </View>
+
+      <View style={{ display: "none" }}>
+        <HomeScreen props={"bogo"} />
       </View>
     </>
   );

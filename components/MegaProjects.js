@@ -6,7 +6,6 @@ import {
   Stack,
   Modal,
   Button,
-  Image,
   HStack,
   Spinner,
   Heading,

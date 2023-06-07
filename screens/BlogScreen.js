@@ -2,10 +2,10 @@ import { View, Text } from "react-native";
 import React from "react";
 import Header from "../components/Header";
 
-const CertificationsScreen = () => {
+const BlogScreen = () => {
   return (
     <>
-      <Header headerTitle={"Certifications"} mainScreen={true} />
+      <Header headerTitle={"Blogs"} mainScreen={true} />
       <View
         style={{
           flex: 1,
@@ -16,10 +16,10 @@ const CertificationsScreen = () => {
           borderColor: "#0e9648",
         }}
       >
-        <Text>Certification Screen!</Text>
+        <Text>Blog Screen!</Text>
       </View>
     </>
   );
 };
 
-export default CertificationsScreen;
+export default BlogScreen;

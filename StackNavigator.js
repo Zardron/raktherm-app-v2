@@ -1,13 +1,12 @@
 import { View, Text } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./screens/HomeScreen";
 import VideoGalleryScreen from "./screens/VideoGalleryScreen";
-import MegaProjects from "./components/MegaProjects";
 import ProductRangesScreen from "./screens/ProductRangesScreen";
 import ServicesAndSupportScreen from "./screens/ServicesAndSupportScreen";
-import CertificationsScreen from "./screens/CertificationsScreen";
 import FeedDetails from "./stack/FeedDetails";
+import BlogScreen from "./screens/BlogScreen";
 
 const Stack = createStackNavigator();
 
@@ -15,7 +14,7 @@ const navOptionHandler = () => ({
   headerShown: false,
 });
 
-export const HomeStack = (data) => {
+export const HomeStack = () => {
   return (
     <Stack.Navigator initialRouteName="HomeScreen">
       <Stack.Screen
@@ -68,12 +67,12 @@ export const ServicesAndSupportStack = () => {
   );
 };
 
-export const CertificationsStack = () => {
+export const BlogStack = () => {
   return (
-    <Stack.Navigator initialRouteName="Certifications">
+    <Stack.Navigator initialRouteName="Blogs">
       <Stack.Screen
-        name="Certifications"
-        component={CertificationsScreen}
+        name="Blogs"
+        component={BlogScreen}
         options={navOptionHandler}
       />
     </Stack.Navigator>

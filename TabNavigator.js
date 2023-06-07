@@ -1,5 +1,5 @@
 import {
-  CertificationsStack,
+  BlogStack,
   HomeStack,
   ProductRangesStack,
   ServicesAndSupportStack,
@@ -8,7 +8,6 @@ import {
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { View } from "native-base";
 import { Dimensions } from "react-native";
 
@@ -47,6 +46,38 @@ const TabNavigator = () => {
       initialRouteName="Home"
     >
       <Tab.Screen
+        name="Blogs"
+        component={BlogStack}
+        options={{
+          tabBarShowLabel: false,
+          tabBarIcon: ({ focused }) => {
+            let icon;
+
+            {
+              icon = (
+                <View>
+                  <View
+                    style={{
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <FontAwesome5
+                      name="blogger-b"
+                      size={24}
+                      style={config(focused)}
+                    />
+                  </View>
+                </View>
+              );
+            }
+
+            return icon;
+          },
+        }}
+      />
+      <Tab.Screen
         name="VideoGallery"
         component={VideoGalleryStack}
         options={{
@@ -66,38 +97,6 @@ const TabNavigator = () => {
                   >
                     <MaterialIcons
                       name="video-library"
-                      size={24}
-                      style={config(focused)}
-                    />
-                  </View>
-                </View>
-              );
-            }
-
-            return icon;
-          },
-        }}
-      />
-      <Tab.Screen
-        name="ProductRanges"
-        component={ProductRangesStack}
-        options={{
-          tabBarShowLabel: false,
-          tabBarIcon: ({ focused }) => {
-            let icon;
-
-            {
-              icon = (
-                <View>
-                  <View
-                    style={{
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <FontAwesome5
-                      name="clipboard-list"
                       size={24}
                       style={config(focused)}
                     />
@@ -143,6 +142,38 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
+        name="ProductRanges"
+        component={ProductRangesStack}
+        options={{
+          tabBarShowLabel: false,
+          tabBarIcon: ({ focused }) => {
+            let icon;
+
+            {
+              icon = (
+                <View>
+                  <View
+                    style={{
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <FontAwesome5
+                      name="clipboard-list"
+                      size={24}
+                      style={config(focused)}
+                    />
+                  </View>
+                </View>
+              );
+            }
+
+            return icon;
+          },
+        }}
+      />
+      <Tab.Screen
         name="ServicesAndSupport"
         component={ServicesAndSupportStack}
         options={{
@@ -162,38 +193,6 @@ const TabNavigator = () => {
                   >
                     <MaterialIcons
                       name="contact-support"
-                      size={24}
-                      style={config(focused)}
-                    />
-                  </View>
-                </View>
-              );
-            }
-
-            return icon;
-          },
-        }}
-      />
-      <Tab.Screen
-        name="Certifications"
-        component={CertificationsStack}
-        options={{
-          tabBarShowLabel: false,
-          tabBarIcon: ({ focused }) => {
-            let icon;
-
-            {
-              icon = (
-                <View>
-                  <View
-                    style={{
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <MaterialCommunityIcons
-                      name="file-certificate"
                       size={24}
                       style={config(focused)}
                     />
