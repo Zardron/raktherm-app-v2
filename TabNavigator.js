@@ -36,8 +36,8 @@ const TabNavigator = () => {
           paddingTop: 17,
           height: 70,
           width: deviceWidth,
-          borderTopWidth: 1,
-          borderTopColor: "#414142",
+          borderTopWidth: 0.2,
+          borderTopColor: "#0e9648",
         },
         tabBarLabelStyle: {
           fontSize: 14,

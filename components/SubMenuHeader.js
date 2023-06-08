@@ -13,7 +13,7 @@ const SubMenuHeader = ({ headerTitle }) => {
 
   return (
     <>
-      <StatusBar bg="#3700B3" barStyle="dark-content" />
+      <StatusBar bg="transparent" barStyle="dark-content" />
       <Box safeAreaTop bg="transparent" />
       <View
         style={{

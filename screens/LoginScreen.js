@@ -80,7 +80,7 @@ const LoginScreen = () => {
             justifyContent: "center",
           }}
         >
-          <StatusBar bg="#3700B3" barStyle="dark-content" />
+          <StatusBar bg="transparent" barStyle="dark-content" />
           <Image
             source={require("../assets/logo_agt.png")}
             width={deviceWidth}

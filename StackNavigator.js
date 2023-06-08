@@ -7,6 +7,7 @@ import ProductRangesScreen from "./screens/ProductRangesScreen";
 import ServicesAndSupportScreen from "./screens/ServicesAndSupportScreen";
 import FeedDetails from "./stack/FeedDetails";
 import BlogScreen from "./screens/BlogScreen";
+import BlogDetail from "./stack/BlogDetail";
 
 const Stack = createStackNavigator();
 
@@ -73,6 +74,11 @@ export const BlogStack = () => {
       <Stack.Screen
         name="Blogs"
         component={BlogScreen}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="BlogDetail"
+        component={BlogDetail}
         options={navOptionHandler}
       />
     </Stack.Navigator>

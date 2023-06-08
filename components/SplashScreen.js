@@ -46,7 +46,7 @@ const SplashScreen = () => {
       >
         <AutoHeightImage
           source={require("../assets/logo_agt.png")}
-          width={deviceWidth - 28}
+          width={deviceWidth - 30}
         />
       </View>
       <View

@@ -334,154 +334,158 @@ const DrawerNavigator = ({ isLoggedIn, isGuestLogin, handleLogout }) => {
                 borderTopColor: "#41404040",
               }}
             >
-              <Pressable>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    padding: 15,
-                    borderRadius: 10,
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <View
-                    style={{
-                      flex: 0.2,
-                      flexDirection: "row",
-                      alignItems: "center",
-                      justifyContent: "flex-start",
-                    }}
-                  >
-                    <FontAwesome5 name="user-tie" size={24} color="#404041" />
-                  </View>
-                  <View style={{ flex: 0.8 }}>
-                    <Text
-                      style={{
-                        color: "#404041",
-                        fontSize: 18,
-                        fontWeight: "700",
-                      }}
-                      onPress={() => handleNavigate("Notification")}
-                    >
-                      My Profile
-                    </Text>
-                  </View>
-                </View>
-              </Pressable>
-              <Pressable>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    padding: 15,
-                    borderRadius: 10,
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <View
-                    style={{
-                      flex: 0.2,
-                      flexDirection: "row",
-                      alignItems: "center",
-                      justifyContent: "flex-start",
-                    }}
-                  >
-                    <Ionicons
-                      name="ios-settings-sharp"
-                      size={24}
-                      color="#404041"
-                    />
-                  </View>
-                  <View style={{ flex: 0.8 }}>
-                    <Text
-                      style={{
-                        color: "#404041",
-                        fontSize: 18,
-                        fontWeight: "700",
-                      }}
-                      onPress={() => handleNavigate("Settings")}
-                    >
-                      Settings
-                    </Text>
-                  </View>
-                </View>
-              </Pressable>
               {isGuestLogin ? (
-                <Pressable onPress={handleLogout}>
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      alignItems: "center",
-                      padding: 15,
-                      borderRadius: 10,
-                      justifyContent: "space-between",
-                    }}
-                  >
+                <>
+                  <Pressable onPress={handleLogout}>
                     <View
                       style={{
-                        flex: 0.2,
                         flexDirection: "row",
                         alignItems: "center",
-                        justifyContent: "flex-start",
+                        padding: 15,
+                        borderRadius: 10,
+                        justifyContent: "space-between",
                       }}
                     >
-                      <MaterialIcons name="logout" size={24} color="blue" />
-                    </View>
-                    <View style={{ flex: 0.8 }}>
-                      <Text
+                      <View
                         style={{
-                          color: "blue",
-                          fontSize: 18,
-                          fontWeight: "700",
+                          flex: 0.2,
+                          flexDirection: "row",
+                          alignItems: "center",
+                          justifyContent: "flex-start",
                         }}
                       >
-                        Back to Sign In
-                      </Text>
+                        <MaterialIcons name="logout" size={24} color="blue" />
+                      </View>
+                      <View style={{ flex: 0.8 }}>
+                        <Text
+                          style={{
+                            color: "blue",
+                            fontSize: 18,
+                            fontWeight: "700",
+                          }}
+                        >
+                          Back to Sign In
+                        </Text>
+                      </View>
                     </View>
-                  </View>
-                </Pressable>
+                  </Pressable>
+                </>
               ) : (
-                <Pressable onPress={handleLogout}>
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      alignItems: "center",
-                      padding: 15,
-                      borderRadius: 10,
-                      justifyContent: "space-between",
-                    }}
-                  >
+                <>
+                  <Pressable>
                     <View
                       style={{
-                        flex: 0.2,
                         flexDirection: "row",
                         alignItems: "center",
-                        justifyContent: "flex-start",
+                        padding: 15,
+                        borderRadius: 10,
+                        justifyContent: "space-between",
                       }}
                     >
-                      <MaterialIcons name="logout" size={24} color="red" />
-                    </View>
-                    <View style={{ flex: 0.8 }}>
-                      <Text
+                      <View
                         style={{
-                          color: "red",
-                          fontSize: 18,
-                          fontWeight: "700",
+                          flex: 0.2,
+                          flexDirection: "row",
+                          alignItems: "center",
+                          justifyContent: "flex-start",
                         }}
                       >
-                        Logout
-                      </Text>
+                        <FontAwesome5
+                          name="user-tie"
+                          size={24}
+                          color="#404041"
+                        />
+                      </View>
+                      <View style={{ flex: 0.8 }}>
+                        <Text
+                          style={{
+                            color: "#404041",
+                            fontSize: 18,
+                            fontWeight: "700",
+                          }}
+                          onPress={() => handleNavigate("Notification")}
+                        >
+                          My Profile
+                        </Text>
+                      </View>
                     </View>
-                  </View>
-                </Pressable>
+                  </Pressable>
+                  <Pressable>
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        padding: 15,
+                        borderRadius: 10,
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <View
+                        style={{
+                          flex: 0.2,
+                          flexDirection: "row",
+                          alignItems: "center",
+                          justifyContent: "flex-start",
+                        }}
+                      >
+                        <Ionicons
+                          name="ios-settings-sharp"
+                          size={24}
+                          color="#404041"
+                        />
+                      </View>
+                      <View style={{ flex: 0.8 }}>
+                        <Text
+                          style={{
+                            color: "#404041",
+                            fontSize: 18,
+                            fontWeight: "700",
+                          }}
+                          onPress={() => handleNavigate("Settings")}
+                        >
+                          Settings
+                        </Text>
+                      </View>
+                    </View>
+                  </Pressable>
+                  <Pressable onPress={handleLogout}>
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        padding: 15,
+                        borderRadius: 10,
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <View
+                        style={{
+                          flex: 0.2,
+                          flexDirection: "row",
+                          alignItems: "center",
+                          justifyContent: "flex-start",
+                        }}
+                      >
+                        <MaterialIcons name="logout" size={24} color="red" />
+                      </View>
+                      <View style={{ flex: 0.8 }}>
+                        <Text
+                          style={{
+                            color: "red",
+                            fontSize: 18,
+                            fontWeight: "700",
+                          }}
+                        >
+                          Logout
+                        </Text>
+                      </View>
+                    </View>
+                  </Pressable>
+                </>
               )}
             </View>
           </View>
         </ScrollView>
-      </View>
-
-      <View style={{ display: "none" }}>
-        <HomeScreen props={"bogo"} />
       </View>
     </>
   );

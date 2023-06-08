@@ -227,13 +227,6 @@ const Certification = () => {
                     item.certImg.map((certData, key) => (
                       <View
                         style={{
-                          shadowColor: "black",
-                          shadowOpacity: 0.5,
-                          shadowRadius: 2,
-                          shadowOffset: {
-                            height: 1,
-                            width: 1,
-                          },
                           marginBottom: 10,
                         }}
                         key={key}
@@ -248,13 +241,9 @@ const Certification = () => {
                         >
                           <Animated.View
                             style={{
-                              shadowColor: "black",
-                              shadowOpacity: 0.5,
-                              shadowRadius: 2,
-                              shadowOffset: {
-                                height: 1,
-                                width: 1,
-                              },
+                              flexDirection: "column",
+                              alignItems: "center",
+                              justifyContent: "center",
                             }}
                           >
                             <PinchGestureHandler
@@ -266,7 +255,7 @@ const Certification = () => {
                               <Animated.Image
                                 source={certData.imgSrc}
                                 style={{
-                                  width: deviceWidth - 62,
+                                  width: 300,
                                   height: 420,
                                   transform: [
                                     { scale },

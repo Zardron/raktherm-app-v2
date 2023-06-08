@@ -63,7 +63,7 @@ const FeedDetails = ({ route }) => {
                         key={key}
                         source={data.imgSrc}
                         alt="img"
-                        width={deviceWidth - 28}
+                        width={deviceWidth - 30}
                       />
                     </TouchableOpacity>
                   </Box>

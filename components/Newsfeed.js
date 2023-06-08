@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Text, Box, HStack, Center, Stack } from "native-base";
-import { useNavigation } from "@react-navigation/native";
 import { ScrollView } from "react-native-gesture-handler";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import { NewsfeedData } from "../assets/data/Newsfeed";
@@ -52,7 +51,7 @@ const Newsfeed = () => {
                   <AutoHeightImage
                     source={data.imgSrc}
                     alt="img"
-                    width={deviceWidth - 28}
+                    width={deviceWidth - 30}
                   />
                   {/* </Pressable> */}
                 </Box>
