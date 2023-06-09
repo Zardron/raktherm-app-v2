@@ -38,8 +38,6 @@ const VideoGalleryScreen = () => {
         style={{
           flex: 1,
           backgroundColor: "#f6f8fa",
-          borderBottomWidth: 50,
-          borderColor: "#0e9648",
         }}
       >
         <ScrollView>
@@ -47,7 +45,7 @@ const VideoGalleryScreen = () => {
             <View
               style={{
                 marginTop: 10,
-                marginBottom: data.id === lastVideo ? 50 : 5,
+                marginBottom: data.id === lastVideo ? 20 : 5,
                 paddingHorizontal: 20,
               }}
               key={key}

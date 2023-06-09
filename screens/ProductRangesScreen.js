@@ -9,14 +9,24 @@ const ProductRangesScreen = () => {
       <View
         style={{
           flex: 1,
-          justifyContent: "center",
+          flexDirection: "column",
+          justifyContent: "space-between",
           alignItems: "center",
           backgroundColor: "#e5e7ebd1",
-          borderBottomWidth: 50,
-          borderColor: "#0e9648",
         }}
       >
-        <Text>Product Ranges Screen!</Text>
+        <View style={{ width: "25%", borderColor: "red", borderWidth: 5 }}>
+          <Text>asd</Text>
+        </View>
+        <View style={{ width: "25%", borderColor: "red", borderWidth: 5 }}>
+          <Text>asd</Text>
+        </View>
+        <View style={{ width: "25%", borderColor: "red", borderWidth: 5 }}>
+          <Text>asd</Text>
+        </View>
+        <View style={{ width: "25%", borderColor: "red", borderWidth: 5 }}>
+          <Text>asd</Text>
+        </View>
       </View>
     </>
   );

@@ -29,15 +29,12 @@ const TabNavigator = () => {
       screenOptions={() => ({
         headerShown: false,
         tabBarStyle: {
-          position: "absolute",
-          bottom: 24,
-          elevation: 0,
           backgroundColor: "#fff",
-          paddingTop: 17,
-          height: 70,
-          width: deviceWidth,
           borderTopWidth: 0.2,
           borderTopColor: "#0e9648",
+          borderBottomWidth: 10,
+          borderColor: "#0e9648",
+          height: 65,
         },
         tabBarLabelStyle: {
           fontSize: 14,

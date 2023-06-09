@@ -45,8 +45,6 @@ const HomeScreen = () => {
         style={{
           flex: 1,
           backgroundColor: "#f6f8fa",
-          borderBottomWidth: 50,
-          borderColor: "#0e9648",
         }}
       >
         <View

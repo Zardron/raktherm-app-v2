@@ -12,11 +12,9 @@ const ServicesAndSupportScreen = () => {
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "#e5e7ebd1",
-          borderBottomWidth: 50,
-          borderColor: "#0e9648",
         }}
       >
-        <Text>Certification Screen!</Text>
+        <Text>Services & Support</Text>
       </View>
     </>
   );

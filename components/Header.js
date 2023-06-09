@@ -76,7 +76,7 @@ const Header = ({ headerTitle, mainScreen }) => {
             justifyContent: "center",
           }}
         >
-          <Text style={{ fontSize: 21, fontWeight: "bold", color: "#f9fafb" }}>
+          <Text style={{ fontSize: 18, fontWeight: "bold", color: "#f9fafb" }}>
             {headerTitle}
           </Text>
         </View>

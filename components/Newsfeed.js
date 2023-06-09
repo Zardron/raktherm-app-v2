@@ -18,7 +18,6 @@ const Newsfeed = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          marginBottom: 30,
           backgroundColor: "#f0f2f5",
         }}
       >

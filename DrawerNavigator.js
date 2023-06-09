@@ -31,7 +31,7 @@ const DrawerNavigator = ({ isLoggedIn, isGuestLogin, handleLogout }) => {
         style={{
           flex: 1,
           backgroundColor: "white",
-          borderBottomWidth: 50,
+          borderBottomWidth: 10,
           borderColor: "#0e9648",
         }}
       >

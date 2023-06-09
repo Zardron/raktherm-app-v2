@@ -20,8 +20,6 @@ const BlogScreen = () => {
           justifyContent: "flex-start",
           alignItems: "center",
           backgroundColor: "#e5e7ebd1",
-          borderBottomWidth: 50,
-          borderColor: "#0e9648",
         }}
       >
         <ScrollView>

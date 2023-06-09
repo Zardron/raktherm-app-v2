@@ -77,7 +77,6 @@ const MegaProjects = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            marginBottom: 30,
           }}
         >
           {/* POST */}

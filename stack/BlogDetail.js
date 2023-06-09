@@ -17,8 +17,6 @@ const BlogDetail = ({ route }) => {
           flex: 1,
           justifyContent: "flex-start",
           backgroundColor: "#e5e7ebd1",
-          borderBottomWidth: 50,
-          borderColor: "#0e9648",
         }}
       >
         <Header headerTitle={"Blog Detail"} mainScreen={false} />
@@ -38,7 +36,7 @@ const BlogDetail = ({ route }) => {
                 style={{
                   marginTop: 10,
                   paddingHorizontal: 20,
-                  marginBottom: 50,
+                  marginBottom: 15,
                 }}
                 key={key}
               >
