@@ -8,7 +8,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 // import { Feather } from "@expo/vector-icons";
 
-const Header = ({ headerTitle, mainScreen }) => {
+const Header = ({ headerTitle, mainScreen, size }) => {
   const navigation = useNavigation();
 
   return (
@@ -25,7 +25,7 @@ const Header = ({ headerTitle, mainScreen }) => {
         {mainScreen ? (
           <View
             style={{
-              flex: 1,
+              flex: 0.5,
 
               flexDirection: "row",
               alignItems: "center",
@@ -40,7 +40,7 @@ const Header = ({ headerTitle, mainScreen }) => {
         ) : (
           <View
             style={{
-              flex: 1,
+              flex: 0.7,
 
               flexDirection: "row",
               alignItems: "center",
@@ -69,20 +69,26 @@ const Header = ({ headerTitle, mainScreen }) => {
         )}
         <View
           style={{
-            flex: 1.5,
+            flex: 2,
 
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <Text style={{ fontSize: 18, fontWeight: "bold", color: "#f9fafb" }}>
+          <Text
+            style={{
+              fontSize: size ? size : 18,
+              fontWeight: "bold",
+              color: "#f9fafb",
+            }}
+          >
             {headerTitle}
           </Text>
         </View>
         <View
           style={{
-            flex: 1,
+            flex: 0.5,
 
             flexDirection: "row",
             alignItems: "center",

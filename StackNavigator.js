@@ -1,5 +1,4 @@
-import { View, Text } from "react-native";
-import React, { useEffect } from "react";
+import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./screens/HomeScreen";
 import VideoGalleryScreen from "./screens/VideoGalleryScreen";
@@ -8,6 +7,10 @@ import ServicesAndSupportScreen from "./screens/ServicesAndSupportScreen";
 import FeedDetails from "./stack/FeedDetails";
 import BlogScreen from "./screens/BlogScreen";
 import BlogDetail from "./stack/BlogDetail";
+import PPRDetails from "./stack/PPRDetails";
+import UPVCDetails from "./stack/UPVCDetails";
+import PEXDetails from "./stack/PEXDetails";
+import SealantDetails from "./stack/SealantDetails";
 
 const Stack = createStackNavigator();
 
@@ -50,6 +53,26 @@ export const ProductRangesStack = () => {
       <Stack.Screen
         name="ProductRanges"
         component={ProductRangesScreen}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="PPR"
+        component={PPRDetails}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="UPVC"
+        component={UPVCDetails}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="PEX"
+        component={PEXDetails}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="SEALANT"
+        component={SealantDetails}
         options={navOptionHandler}
       />
     </Stack.Navigator>

@@ -9,7 +9,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { View } from "native-base";
-import { Dimensions } from "react-native";
+import { Dimensions, Platform } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
@@ -34,7 +34,7 @@ const TabNavigator = () => {
           borderTopColor: "#0e9648",
           borderBottomWidth: 10,
           borderColor: "#0e9648",
-          height: 65,
+          height: Platform.OS === "ios" ? 80 : 65,
         },
         tabBarLabelStyle: {
           fontSize: 14,
@@ -52,7 +52,7 @@ const TabNavigator = () => {
 
             {
               icon = (
-                <View>
+                <View style={{ marginTop: Platform.OS === "ios" ? 15 : 0 }}>
                   <View
                     style={{
                       flexDirection: "column",
@@ -84,7 +84,7 @@ const TabNavigator = () => {
 
             {
               icon = (
-                <View>
+                <View style={{ marginTop: Platform.OS === "ios" ? 15 : 0 }}>
                   <View
                     style={{
                       flexDirection: "column",
@@ -96,6 +96,7 @@ const TabNavigator = () => {
                       name="video-library"
                       size={24}
                       style={config(focused)}
+                      f
                     />
                   </View>
                 </View>
@@ -116,7 +117,7 @@ const TabNavigator = () => {
 
             {
               icon = (
-                <View>
+                <View style={{ marginTop: Platform.OS === "ios" ? 15 : 0 }}>
                   <View
                     style={{
                       flexDirection: "column",
@@ -148,7 +149,7 @@ const TabNavigator = () => {
 
             {
               icon = (
-                <View>
+                <View style={{ marginTop: Platform.OS === "ios" ? 15 : 0 }}>
                   <View
                     style={{
                       flexDirection: "column",
@@ -180,7 +181,7 @@ const TabNavigator = () => {
 
             {
               icon = (
-                <View>
+                <View style={{ marginTop: Platform.OS === "ios" ? 15 : 0 }}>
                   <View
                     style={{
                       flexDirection: "column",

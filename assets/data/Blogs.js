@@ -14,7 +14,6 @@ export const BlogData = [
           paddingBottom={0}
           fontWeight={"bold"}
           fontSize={18}
-          fontFamily={"Gilroy-Regular"}
         >
           Why Reliable Plumbing is Necessary?
         </Text>
