@@ -11,6 +11,7 @@ import PPRDetails from "./stack/PPRDetails";
 import UPVCDetails from "./stack/UPVCDetails";
 import PEXDetails from "./stack/PEXDetails";
 import SealantDetails from "./stack/SealantDetails";
+import Details from "./stack/Details";
 
 const Stack = createStackNavigator();
 
@@ -58,6 +59,11 @@ export const ProductRangesStack = () => {
       <Stack.Screen
         name="PPR"
         component={PPRDetails}
+        options={navOptionHandler}
+      />
+      <Stack.Screen
+        name="Details"
+        component={Details}
         options={navOptionHandler}
       />
       <Stack.Screen

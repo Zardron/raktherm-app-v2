@@ -1,69 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../components/Header";
-import {
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  Platform,
-  UIManager,
-  LayoutAnimation,
-  Dimensions,
-} from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
-import Accordion from "react-native-collapsible/Accordion";
-import AutoHeightImage from "react-native-auto-height-image";
-import { sections } from "../assets/data/ProductRanges/PPRSection";
+import { View, Text, Box, Stack, ScrollView, Pressable } from "native-base";
+import { Dimensions, Platform } from "react-native";
+import { FITTINGS_DATA } from "../assets/data/ProductRanges/PPRSection";
+import { useNavigation } from "@react-navigation/native";
+import { Image } from "expo-image";
+
+const blurhash =
+  "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
 const PPRDetails = () => {
-  if (Platform.OS === "android") {
-    UIManager.setLayoutAnimationEnabledExperimental(true);
-  }
-
-  function toggleItem() {
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-    setExpanded(!expanded);
-  }
-
-  const [activeSections, setActiveSections] = useState([]);
-
-  function renderHeader(section, _, isActive) {
-    return (
-      <View style={styles.accordHeader}>
-        <View style={{ width: "90%" }}>
-          <Text style={styles.accordTitle}>{section.title}</Text>
-        </View>
-        <View
-          style={{
-            width: "10%",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Icon
-            name={isActive ? "chevron-up" : "chevron-down"}
-            size={20}
-            color="#bbb"
-          />
-        </View>
-      </View>
-    );
-  }
-
-  function renderContent(section, _, isActive) {
-    return <View style={styles.accordBody}>{section.content}</View>;
-  }
-
+  const navigation = useNavigation();
   return (
     <>
       <View
         style={{
           flex: 1,
           justifyContent: "flex-start",
-          backgroundColor: "#e5e7ebd1",
+          backgroundColor: "white",
         }}
       >
         <Header
@@ -72,70 +26,64 @@ const PPRDetails = () => {
           mainScreen={false}
         />
 
-        <SafeAreaView style={styles.container}>
-          <View style={{ borderBottomColor: "#0e9648", borderBottomWidth: 5 }}>
-            <AutoHeightImage
-              alt="menu-img"
-              source={{
-                uri: "https://www.raktherm.com/Mobileapp/Images/Images/PPRCover.jpg",
-              }}
-              width={Dimensions.get("window").width}
-            />
-          </View>
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={styles.container}
+        <ScrollView>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              alignItems: "center",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: 10,
+              padding: 10,
+              marginTop: 5,
+            }}
           >
-            <View style={{ paddingTop: 10 }}>
-              <Accordion
-                align="bottom"
-                sections={sections}
-                activeSections={activeSections}
-                renderHeader={renderHeader}
-                renderContent={renderContent}
-                onChange={(sections) => setActiveSections(sections)}
-                sectionContainerStyle={styles.accordContainer}
-              />
-            </View>
-          </ScrollView>
-        </SafeAreaView>
+            {FITTINGS_DATA.map((data, key) => (
+              <View style={{ width: "48%" }} key={key}>
+                <Box
+                  rounded="lg"
+                  overflow="hidden"
+                  borderColor="coolGray.200"
+                  borderWidth="1"
+                >
+                  <Box>
+                    <Pressable
+                      onPress={() =>
+                        navigation.navigate({
+                          name: "Details",
+                          params: { _id: data.id },
+                        })
+                      }
+                    >
+                      <Image
+                        source={{
+                          uri: data.imgSrc,
+                        }}
+                        width={Dimensions.get("window").width / 2}
+                        height={Platform.OS === "ios" ? 180 : 150}
+                        placeholder={blurhash}
+                        contentFit="cover"
+                        transition={1000}
+                      />
+                    </Pressable>
+                  </Box>
+
+                  <Stack p="4" space={3} backgroundColor={"#0e9648"}>
+                    <Stack space={2}>
+                      <Text numberOfLines={1} color={"white"}>
+                        {data.title}
+                      </Text>
+                    </Stack>
+                  </Stack>
+                </Box>
+              </View>
+            ))}
+          </View>
+        </ScrollView>
       </View>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  accordContainer: {
-    paddingBottom: 4,
-    paddingHorizontal: 10,
-  },
-  accordHeader: {
-    padding: 12,
-    backgroundColor: "white",
-    color: "#eee",
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  accordTitle: {
-    fontSize: 20,
-  },
-  accordBody: {
-    borderTopColor: "#414142",
-    borderTopWidth: 0.3,
-    padding: 12,
-    backgroundColor: "white",
-  },
-  textSmall: {
-    fontSize: 16,
-  },
-  seperator: {
-    height: 12,
-  },
-});
 
 export default PPRDetails;

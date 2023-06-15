@@ -34,145 +34,264 @@ import ValveBody from "../../../ProductRanges/PPR/ValveBody";
 import TransitionElbowFemale from "../../../ProductRanges/PPR/TransitionElbowFemale";
 import TransitionElbowMale from "../../../ProductRanges/PPR/TransitionElbowMale";
 
-export const sections = [
+export const FITTINGS_DATA = [
   {
-    title: "Bend",
-    content: <Bend />,
-  },
-  {
-    title: "Bracket for Pipe",
-    content: <BracketForPipe />,
-  },
-  {
-    title: "Bracket with Clamp",
-    content: <BracketWithClamp />,
-  },
-  {
-    title: "Clamp for Pipe",
-    content: <ClampForPipe />,
-  },
-  {
-    title: "Cross Tee",
-    content: <CrossTee />,
-  },
-  {
-    title: "Elbow 45°",
-    content: <Elbow45 />,
-  },
-  {
-    title: "Elbow 90°",
-    content: <Elbow90 />,
-  },
-  {
-    title: "Elbow Reducer",
-    content: <ElbowReducer />,
-  },
-  {
-    title: "End Cap",
-    content: <EndCap />,
-  },
-  {
-    title: "End Plug (Long Body)",
-    content: <EndPlugLong />,
-  },
-  {
-    title: "End Plug (Short Body)",
-    content: <EndPlugShort />,
-  },
-  {
-    title: "Equal Tee",
-    content: <EqualTee />,
-  },
-  {
-    title: "Female Union",
-    content: <FemaleUnion />,
-  },
-  {
-    title: "Flanges Adaptor",
-    content: <FlangesAdaptor />,
-  },
-  {
-    title: "Manifold",
-    content: <Manifold />,
-  },
-  {
-    title: "Over Bridge Bow",
-    content: <OverBridgeBow />,
-  },
-  {
-    title: "Over Bridge Bow (Smart)",
-    content: <OverBridgeBowSmart />,
-  },
-  {
-    title: "PPR Ball Valve",
-    content: <PPRBallValve />,
-  },
-  {
-    title: "Reducer Socket",
-    content: <ReducerSocket />,
-  },
-  {
-    title: "Reducing Tee",
-    content: <ReducingTee />,
-  },
-  {
-    title: "Saddle Socket",
-    content: <SaddleSocket />,
-  },
-  {
-    title: "Socket",
+    id: "1",
+    title: "SOCKET",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/s1.png",
     content: <Socket />,
   },
   {
-    title: "Spigot Elbow 90°",
-    content: <SpigotElbow90 />,
+    id: "2",
+    title: "REDUCER SOCKET",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/r1.png",
+    content: <Socket />,
   },
   {
-    title: "Transition Elbow Female",
-    content: <TransitionElbowFemale />,
+    id: "3",
+    title: "ELBOW 90°",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/e1.png",
+    content: <Socket />,
   },
   {
-    title: "Transition Elbow Male",
-    content: <TransitionElbowMale />,
+    id: "4",
+    title: "ELBOW 45°",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/e3.png",
+    content: <Socket />,
   },
   {
-    title: "Transition Female Tee",
-    content: <TransitionFemaleTee />,
+    id: "5",
+    title: "ELBOW REDUCER",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/re1.png",
+    content: <Socket />,
   },
   {
-    title: "Transition Piece Round Female",
-    content: <TransitionPieceRoundFemale />,
+    id: "6",
+    title: "SPIGOT ELBOW 90°",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/se1.png",
+    content: <Socket />,
   },
   {
-    title: "Transition Piece Round Female with Hexagon",
-    content: <TransitionPieceRoundFemaleWithHexagon />,
+    id: "7",
+    title: "EQUAL TEE",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/t1.png",
+    content: <Socket />,
   },
   {
-    title: "Transition Piece Round Male",
-    content: <TransitionPieceRoundMale />,
+    id: "8",
+    title: "REDUCING TEE",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/t2.png",
+    content: <Socket />,
   },
   {
-    title: "Transition Piece Round Male with Hexagon Socket",
-    content: <TransitionPieceRoundMaleWithHexagonSocket />,
+    id: "9",
+    title: "END CAP",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/c.png",
+    content: <Socket />,
   },
   {
-    title: "Transition PPR Female Union",
-    content: <TransitionPPRFemaleUnion />,
+    id: "10",
+    title: "CROSS TEE",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/x.png",
+    content: <Socket />,
   },
   {
-    title: "Transition PPR Female Union Brass with Ribs",
-    content: <TransitionPPRFemaleUnionBrassWithRibs />,
+    id: "11",
+    title: "FEMALE UNION BOTH ENDS WELDING",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/uf2.png",
+    content: <Socket />,
   },
   {
-    title: "Transition PPR Male Union",
-    content: <TransitionPPRMaleUnion />,
+    id: "12",
+    title: "SADDLE SOCKET",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/sds1.png",
+    content: <Socket />,
   },
   {
-    title: "Transition PPR Male Union Brass with Ribs",
-    content: <TransitionPPRMaleUnionBrassWithRibs />,
+    id: "13",
+    title: "FLANGES ADAPTOR",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/fsa.png",
+    content: <Socket />,
   },
   {
-    title: "Valve Body",
-    content: <ValveBody />,
+    id: "14",
+    title: "END PLUG (SHORT BODY)",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/c1.jpg",
+    content: <Socket />,
+  },
+  {
+    id: "15",
+    title: "END PLUG (LONG BODY)",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/c2.png",
+    content: <Socket />,
+  },
+  {
+    id: "16",
+    title: "OVER BRIDGE BOW",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/b.png",
+    content: <Socket />,
+  },
+  {
+    id: "17",
+    title: "(SMART) OVER BRIDGE BOW",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/obb.png",
+    content: <Socket />,
+  },
+  {
+    id: "18",
+    title: "BRACKET FOR PIPE",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/bt.png",
+    content: <Socket />,
+  },
+  {
+    id: "19",
+    title: "BRACKET WITH CLAMP",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/btc.png",
+    content: <Socket />,
+  },
+  {
+    id: "20",
+    title: "CLAMP FOR PIPE",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/btc.png",
+    content: <Socket />,
+  },
+  {
+    id: "21",
+    title: "BEND",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/be.png",
+    content: <Socket />,
+  },
+  {
+    id: "22",
+    title: "PPR MANIFOLD",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/mnf.png",
+    content: <Socket />,
+  },
+  {
+    id: "23",
+    title: "PPR BALL VALVE",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/ppbv.png",
+    content: <Socket />,
+  },
+  {
+    id: "24",
+    title: "TRANSITION PIECE ROUND-FEMALE",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/af.png",
+    content: <Socket />,
+  },
+  {
+    id: "25",
+    title: "TRANSITION PIECE ROUND-FEMALE WITH HEXAGON SOCKET",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/af1.png",
+    content: <Socket />,
+  },
+  {
+    id: "26",
+    title: "TRANSITION PIECE ROUND-MALE",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/am.png",
+    content: <Socket />,
+  },
+  {
+    id: "27",
+    title: "TRANSITION PPR MALE UNION BRASS WITH RIBS",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/tum3.png",
+    content: <Socket />,
+  },
+  {
+    id: "28",
+    title: "TRANSITION PPR FEMALE UNION BRASS WITH RIBS",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/tuf3.png",
+    content: <Socket />,
+  },
+  {
+    id: "29",
+    title: "TRANSITION PPR MALE UNION",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/tum2.jpg",
+    content: <Socket />,
+  },
+  {
+    id: "30",
+    title: "TRANSITION PPR FEMALE UNION",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/tuf2.jpg",
+    content: <Socket />,
+  },
+  {
+    id: "31",
+    title: "TRANSITION PIECE ROUND-MALE WITH HEXAGON SOCKET",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/am1.png",
+    content: <Socket />,
+  },
+  {
+    id: "32",
+    title: "TANK CONNECTOR",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/tcm.png",
+    content: <Socket />,
+  },
+  {
+    id: "33",
+    title: "TRANSITION FEMALE TEE",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/t3.jpg",
+    content: <Socket />,
+  },
+  {
+    id: "34",
+    title: "VALVE BODY",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/v4.png",
+    content: <Socket />,
+  },
+  {
+    id: "35",
+    title: "TRANSITION ELBOW FEMALE",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/e6.png",
+    content: <Socket />,
+  },
+  {
+    id: "36",
+    title: "WALL MOUNT ELBOW",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/e5.png",
+    content: <Socket />,
+  },
+  {
+    id: "37",
+    title: "TRANSITION ELBOW MALE",
+    imgSrc:
+      "https://www.raktherm.com/mobile_images/product_ranges/PPR_IMAGES/e7.png",
+    content: <Socket />,
   },
 ];
